@@ -1,0 +1,41 @@
+﻿
+@model MVC_TravelTrip.Models.Siniflar.Blog
+@{
+    ViewBag.Title = "blogGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<h2> Blog Güncelle</h2>
+<br />
+
+@*/Begin formun altında bulunan kodlar bloggüncelle ActionResult çalışınca çalışacak ActionREsutl Admin içersinde bloggüncelle form post olduğunda çalışacak*@
+@using (Html.BeginForm("BlogGuncelle", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.LabelFor(x => x.ID)
+    @Html.TextBoxFor(x => x.ID, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Baslik)
+    @Html.TextBoxFor(x => x.Baslik, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Tarih)
+    @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control" })
+    <br />
+    @*@Html.LabelFor(x => x.BlogImage)
+        @Html.TextBoxFor(x => x.BlogImage, new { @class = "form-control" })*@
+
+
+
+    <input type="file" name="BlogImage" value="" />
+
+
+    <img src="@ViewBag.d" alt="" />
+    <br />
+    @Html.LabelFor(x => x.Aciklama)
+    @Html.TextAreaFor(x => x.Aciklama, new { @class = "form-control" })
+    <br />
+
+    <button class="btn btn-success">Kaydet</button>
+}
+
+
